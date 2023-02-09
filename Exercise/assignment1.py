@@ -1,3 +1,6 @@
+import numpy as np
+###### -- Using standart python -- #####
+#Read datafile
 def read_data(filename):
     with open(filename, 'r') as file:
         data = []
@@ -6,11 +9,7 @@ def read_data(filename):
             data.append([float(val) for val in values])
     return data
 
-print(read_data("data.txt")[0]) 
-
-list_of_rows = read_data('data.txt')
-# print(list_of_rows[0])
-
+#Calculate average
 def calc_averages(data):
     n = len(data)
     col1_sum = 0
@@ -22,8 +21,6 @@ def calc_averages(data):
     avg2 = col2_sum / n
     return avg1, avg2
 
-col1_avg, col2_avg = calc_averages(list_of_rows)
-# print(col1_avg, col2_avg)   
 
 def transpose_data(data):
     transposed = [[] for i in range(len(data[0]))]
@@ -32,6 +29,22 @@ def transpose_data(data):
             transposed[i].append(value)
     return transposed
 
+###### -- Using numpy -- #####
+#Read datfile into array
+def getData(filename):
+    data = np.genfromtxt(filename)
+    return data
 
-list_of_columns = transpose_data(list_of_rows)
-# print(list_of_columns[0])
+#Calculates the average of each column
+def calcAverages(input):
+    avg = np.average(input, axis=0)
+    return round(avg[0], 4), round(avg[1], 4)
+
+#Changes array of rows into list of columns
+def transpose(input):
+    array = np.array(input).T
+    return array
+
+
+
+
