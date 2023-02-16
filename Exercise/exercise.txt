@@ -1,0 +1,11 @@
+with open('news_sample.csv', 'r') as input_file, open('redacted_news_sample.csv','w', newline = '') as output_file :
+    # create a CSV reader for the input file
+    csv_reader = csv.reader(input_file)
+    # create a CSV writer for the output file
+    csv_writer = csv.writer(output_file)
+    # iterate through each row in the input file
+    for row in csv_reader:
+        # lowercase all letters in each cell of the row
+        new_row = [cell.lower() for cell in row]
+        # write the modified row to the output file
+        csv_writer.writerow(new_row)
