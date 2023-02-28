@@ -1,6 +1,7 @@
 import re
 import requests
 from bs4 import BeautifulSoup
+import re 
 
 response = requests.get('https://www.bbc.com/news')
 contents = response.text
