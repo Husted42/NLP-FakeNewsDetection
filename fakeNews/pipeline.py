@@ -12,7 +12,7 @@ testSample = 'news_sample.csv'
 
 def findDic():
     print(os.getcwd())
-    (os.chdir(r'dataScience\fakeNews'))
+    #(os.chdir(r'dataScience\fakeNews'))
     print(os.getcwd())
     print(os.listdir())
 
@@ -48,6 +48,8 @@ def cleanContent(input, columnName):
             if w not in stop_words:
                 filteredSentence.append(w)
         filteredSentence = ' '.join(filteredSentence)
+        filteredSentence = filteredSentence.encode("ascii", "ignore")
+        filteredSentence = filteredSentence.decode()
         input.at[i, columnName] = filteredSentence
     return input
 
