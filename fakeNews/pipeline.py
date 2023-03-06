@@ -1,6 +1,15 @@
 import re
 import csv
 import os
+<<<<<<< Updated upstream
+=======
+import pandas as pd
+import nltk
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+#Remember to run the line below the first time 
+#nltk.download('punkt')
+>>>>>>> Stashed changes
 
 testSample = 'news_sample.csv'
 
@@ -18,5 +27,37 @@ def getCsv(inp):
             new_row = [cell.lower() for cell in row]
             csv_writer.writerow(new_row)
 
+<<<<<<< Updated upstream
 findDic()
 getCsv(testSample)
+=======
+''' Cleans and tokenizes text  '''
+def cleanContent(input, columnName): 
+    ##### Not tokenized
+    input[columnName] = input[columnName].apply(str.lower)
+    #regexList contains all the things we want to remove
+    regexList = ['for', '\.', '12', ':', '&']
+    for elm in regexList:
+        input[columnName] = input[columnName].str.replace(elm, '', regex=True)
+    
+    ##### Tokenized
+    stop_words = set(stopwords.words('english'))
+    for i in range(0, len(input[columnName])):
+        colElm = input.at[i, columnName]
+        colElm = nltk.word_tokenize(colElm)
+        filteredSentence = []
+        for w in colElm:
+            if w not in stop_words:
+                filteredSentence.append(w)
+        filteredSentence = ' '.join(filteredSentence)
+        input.at[i, columnName] = filteredSentence
+    return input
+
+#Converts to csv File
+def run(inp):
+    inp = inp.to_csv('redactedNews.csv', index = True)
+
+##### -- Calls -- #####
+run(createDataframe(testSample))
+print(createDataframe(testSample))
+>>>>>>> Stashed changes
