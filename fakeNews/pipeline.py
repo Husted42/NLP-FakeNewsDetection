@@ -42,7 +42,7 @@ def cleanContent(input, columnName):
         for w in colElm:
             if w not in stop_words:
                 filteredSentence.append(w)
-
+            filteredSentence = ' '.join(filteredSentence)
         input.at[i, columnName] = filteredSentence
     return input
 
