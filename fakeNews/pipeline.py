@@ -38,12 +38,12 @@ def cleanContent(input, columnName):
     for i in range (0, len(input[columnName])):
         colElm = input.at[i, columnName]
         colElm = nltk.word_tokenize(colElm)
-        filteredSentence = []
+        lst = []
         for w in colElm:
             if w not in stop_words:
-                filteredSentence.append(w)
+                lst.append(w)
 
-        input.at[i, columnName] = filteredSentence
+        input.at[i, columnName] = lst
     return input
 
 #Converts to csv File
@@ -53,3 +53,4 @@ def run(inp):
 
 ##### -- Calls -- #####
 run(createDataframe(testSample))
+print(createDataframe(testSample))
