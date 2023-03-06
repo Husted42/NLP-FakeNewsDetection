@@ -1,15 +1,12 @@
 import re
 import csv
 import os
-<<<<<<< Updated upstream
-=======
 import pandas as pd
 import nltk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 #Remember to run the line below the first time 
 #nltk.download('punkt')
->>>>>>> Stashed changes
 
 testSample = 'news_sample.csv'
 
@@ -27,10 +24,6 @@ def getCsv(inp):
             new_row = [cell.lower() for cell in row]
             csv_writer.writerow(new_row)
 
-<<<<<<< Updated upstream
-findDic()
-getCsv(testSample)
-=======
 ''' Cleans and tokenizes text  '''
 def cleanContent(input, columnName): 
     ##### Not tokenized
@@ -60,4 +53,3 @@ def run(inp):
 ##### -- Calls -- #####
 run(createDataframe(testSample))
 print(createDataframe(testSample))
->>>>>>> Stashed changes
