@@ -1,3 +1,4 @@
+##### -- Imports -- #####
 import re
 import csv
 import os
@@ -8,8 +9,10 @@ from nltk.tokenize import word_tokenize
 #Remember to run the line below the first time 
 #nltk.download('punkt')
 
+##### -- Global variables -- #####
 testSample = 'news_sample.csv'
 
+##### -- Functions -- #####
 def findDic():
     print(os.getcwd())
     #(os.chdir(r'dataScience\fakeNews'))
@@ -53,7 +56,7 @@ def cleanContent(input, columnName):
         input.at[i, columnName] = filteredSentence
     return input
 
-#Converts to csv File
+'''Converts to csv File'''
 def run(inp):
     inp = inp.to_csv('redactedNews.csv', index = True)
 
