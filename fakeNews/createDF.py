@@ -5,7 +5,7 @@ def getParts():
 
     # Filter
     df_fake = df.loc[df['type'] == 'fake']
-    df_reliable = df.loc[df['type'] == 'fake']
+    df_reliable = df.loc[df['type'] == 'reliable']
 
     #Concat the two dataframes
     df_filtered = pd.concat([df_fake, df_reliable], ignore_index=True)
