@@ -9,7 +9,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
 #Remember to run the line below the first time 
-#nltk.download('punkt')
+nltk.download('punkt')
 
 ##### -- Global variables -- #####
 testSample = 'news_sample.csv'
