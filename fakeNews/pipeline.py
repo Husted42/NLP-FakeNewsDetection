@@ -23,7 +23,8 @@ def getCsv(inp):
         for row in csv_reader:
             new_row = [cell.lower() for cell in row]
             csv_writer.writerow(new_row)
-''' creates dataframe (Run fuctions) '''
+
+''' Creates dataframe (Run fuctions) '''
 def createDataframe(input): 
     df = pd.read_csv(input)
     df = cleanContent(df, 'content')
