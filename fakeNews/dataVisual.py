@@ -37,7 +37,7 @@ def plot(data, number):
 #plot('redactedNews.csv', 10000)
 
 ##### -- data from specefic category -- #####
-'''creates a string of all the words in a certain category of 'content''''
+'''creates a string of all the words in a certain category of 'content'''
 def contentToString(input, category):
     df = pd.read_csv(input)
     string = ""

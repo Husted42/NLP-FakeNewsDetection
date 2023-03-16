@@ -12,7 +12,7 @@ from nltk.tokenize import word_tokenize
 #nltk.download('punkt')
 
 ##### -- Global variables -- #####
-testSample = 'news_sample.csv'
+testSample = 'readyCsv.csv'
 
 ##### -- Functions -- #####
 def findDic():
@@ -74,8 +74,7 @@ def cleanContent(input, columnName):
     input[columnName] = input[columnName].str.replace(r"\*", '', regex=True)
     input[columnName] = input[columnName].str.replace(r"@", '', regex=True)
     input[columnName] = input[columnName].str.replace(r'\s+', ' ', regex=True)
-    for col in input[columnName]:
-        print (col + '!!!!!!!!END OF STRING!!!!!!!!')
+    print(input)
     return input
 
 '''Converts to csv File'''
@@ -84,4 +83,4 @@ def run(inp):
 
 ##### -- Calls -- #####
 run(createDataframe(testSample))
-print(createDataframe(testSample))
+#print(createDataframe(testSample))
