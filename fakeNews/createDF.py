@@ -1,9 +1,9 @@
 import pandas as pd
 
 def getParts():
-    dropList = ['domain', 'url', 'scraped_at', 'updated_at', 'title', 'authors', 'keywords', 'meta_keywords', 'meta_description', 'tags', 'summary', 'source' ]
+    dropList = ['domain', 'url', 'scraped_at', 'updated_at', 'title', 'authors', 'keywords', 'meta_keywords', 'meta_description', 'tags', 'summary' ] # 'source'
 
-    df = pd.read_csv('csvFile.csv', nrows=2000000)
+    df = pd.read_csv('sample.csv', nrows=250)
     
     # Filter
     df_fake = df.loc[df['type'] == 'fake']
@@ -14,7 +14,7 @@ def getParts():
 
     # Write DataFrame to CSV file
     df_filtered = df_filtered.drop(dropList, axis=1)
-    df_filtered.to_csv('rawNews.csv', index=False)
+    df_filtered.to_csv('redactedSample.csv', index=False)
     
     print("Fake / reliable")
     print(df_fake.index)

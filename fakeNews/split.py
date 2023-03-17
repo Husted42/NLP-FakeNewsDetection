@@ -1,7 +1,7 @@
 import csv
 import pandas as pd
 
-df = pd.read_csv(('redactedNews.csv'))
+df = pd.read_csv(('sample.csv'))
  
 # Creating a dataframe with 80% of the data
 part_80 = df.sample(frac = 0.8)
