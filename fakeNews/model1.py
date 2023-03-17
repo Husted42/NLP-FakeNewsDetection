@@ -1,8 +1,7 @@
 import numpy as np
 import sklearn
 import sklearn.linear_model
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import mean_squared_error, accuracy_score
 
 X_train = [["hej", "med", "dig"], ["jeg", "kender", "en", "orm"], ["Min", "hund", "hedder", "Mads"], ["Hvarbehar?"], ["To", "stoddere", "på", "en", "bænk"]]
 y_train = [1, 0, 0, 1, 0]
