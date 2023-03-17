@@ -12,7 +12,7 @@ from nltk.tokenize import word_tokenize
 #nltk.download('punkt')
 
 ##### -- Global variables -- #####
-testSample = 'readyCsv.csv'
+testSample = 'redactedSample.csv'
 
 ##### -- Functions -- #####
 def findDic():
@@ -54,6 +54,7 @@ def cleanContent(input, columnName):
     stop_words = set(stopwords.words('english'))
     for i in range(0, len(input[columnName])):
         colElm = input.at[i, columnName]
+        print(input.at[i, 'type'])
         colElm = nltk.word_tokenize(colElm)
         filteredSentence = []
         for w in colElm:

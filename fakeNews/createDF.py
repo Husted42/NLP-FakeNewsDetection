@@ -4,11 +4,12 @@ def getParts():
     dropList = ['domain', 'url', 'scraped_at', 'updated_at', 'title', 'authors', 'keywords', 'meta_keywords', 'meta_description', 'tags', 'summary' ] # 'source'
 
     df = pd.read_csv('sample.csv', nrows=250)
-    
     # Filter
     df_fake = df.loc[df['type'] == 'fake']
-    df_reliable = df.loc[df['type'] == 'reliable']
+    df_reliable = df.loc[df['type'] == 'reliable'] 
+    df_political = df.loc[df['type'] == 'political'] 
 
+    df_reliable = df_reliable + df_political
     #Concat the two dataframes
     df_filtered = pd.concat([df_fake, df_reliable], ignore_index=True)
 
