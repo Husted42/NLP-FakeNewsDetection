@@ -6,13 +6,14 @@ import pandas as pd
 import nltk
 import cleantext
 from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 
 #Remember to run the line below the first time 
 nltk.download('punkt')
 
 ##### -- Global variables -- #####
-testSample = 'news_sample.csv'
+testSample = 'New.sample.csv'
 
 ##### -- Functions -- #####
 def findDic():
@@ -77,6 +78,17 @@ def cleanContent(input, columnName):
     for col in input[columnName]:
         print (col + '!!!!!!!!END OF STRING!!!!!!!!')
     return input
+
+''' stems text '''
+def stemContent(input, coloumName):
+    ps = PorterStemmer()
+    stemmed_Words = []
+    for word in input:
+        # print('sample.csv')
+        stemmed_Words.append(ps.stem(word))
+    print(stemmed_Words[:1])
+print(stemContent(testSample, 'column_name_to_stem'))
+
 
 '''Converts to csv File'''
 def run(inp):

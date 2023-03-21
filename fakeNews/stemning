@@ -1,0 +1,26 @@
+
+##### -- Imports -- #####
+import re
+import csv
+import os
+import pandas as pd
+import nltk
+import cleantext
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
+from nltk.tokenize import word_tokenize
+# from snowballstemmer import stemmer
+
+nltk.download('punkt')
+
+testSample = 'New.sample.csv'
+
+''' stems text '''
+def stemContent(input, coloumName):
+    stemmed_Words = []
+    for word in input:
+        print('New.sample.csv')
+        stemmed_Words.append(stemmer.stem(word))
+    print(stemmed_Words)
+
+print (stemContent(testSample))
