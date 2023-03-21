@@ -13,7 +13,7 @@ from nltk.tokenize import word_tokenize
 nltk.download('punkt')
 
 ##### -- Global variables -- #####
-testSample = 'New.sample.csv'
+testSample = 'redactedSample.csv'
 
 ##### -- Functions -- #####
 def findDic():
@@ -84,7 +84,6 @@ def stemContent(input, coloumName):
     ps = PorterStemmer()
     stemmed_Words = []
     for word in input:
-        # print('sample.csv')
         stemmed_Words.append(ps.stem(word))
     print(stemmed_Words[:1])
 print(stemContent(testSample, 'column_name_to_stem'))
