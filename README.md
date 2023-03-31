@@ -1,7 +1,7 @@
 # DataScience 
 
 Date: 31/03/2023
-
+Run: 
 <p>Extract the zip file ('news_cleaned_2018_02_13.csv') to a directory/folder, and rename it to 'csvFile.csv'. And download the test.tsv file from the Liar dataset.</p>
 <li> The 'news_cleaned_2018_02_13.csv' can be found here: https://github.com/several27/FakeNewsCorpus/releases/tag/v1.0 </li>
 <li> the test.tsv from Liar dataset can be found here: https://www.cs.ucsb.edu/~william/data/liar_dataset.zip </li>
