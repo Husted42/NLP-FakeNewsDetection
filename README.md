@@ -4,7 +4,7 @@ Date: 31/03/2023
 
 <p>Extract the zip file ('news_cleaned_2018_02_13.csv') to a directory/folder, and rename it to 'csvFile.csv'.</p>
 <p>Ensure that both the data and notebook pipeline are in the same directory/folder.</p>
-<p>Run the pipeline.</p>
+<p>Run all cells.</p>
 <p>Note that the running time may vary depending on the computer on which the pipeline is run.</p>
 
 <p><strong>csv files:</strong></p>
