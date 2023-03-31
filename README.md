@@ -2,7 +2,9 @@
 
 Date: 31/03/2023
 
-<p>Extract the zip file ('news_cleaned_2018_02_13.csv') to a directory/folder, and rename it to 'csvFile.csv'.</p>
+<p>Extract the zip file ('news_cleaned_2018_02_13.csv') to a directory/folder, and rename it to 'csvFile.csv'. And download the test.tsv file from the Liar dataset.</p>
+<p> The 'news_cleaned_2018_02_13.csv' can be found here: https://github.com/several27/FakeNewsCorpus/releases/tag/v1.0 </p>
+<p> the test.tsv from Liar dataset can be found here: https://www.cs.ucsb.edu/~william/data/liar_dataset.zip </p>
 <p>Ensure that both the data and notebook pipeline are in the same directory/folder.</p>
 <p>Run all cells.</p>
 <p>Note that the running time may vary depending on the computer on which the pipeline is run.</p>
